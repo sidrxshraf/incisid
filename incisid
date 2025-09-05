@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FLJE98C8M9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FLJE98C8M9');
+</script></head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>welcome to college, sidra✨</title>
+  <meta name="theme-color" content="#fdeaf1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --pink:#fdeaf1;   /* pastel pink bg */
+      --cream:#fffaf5;  /* cream cards */
+      --white:#ffffff;  /* white accents */
+      --beige:#f3e5d8;  /* beige borders */
+      --text:#463a34;   /* soft brown text */
+      --accent:#ffb6d0; /* subtle accent */
+    }
+
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family:"Poppins", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+      background:var(--pink);
+      color:var(--text);
+      line-height:1.55;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+
+    /* Header */
+    header{
+      position:relative;
+      overflow:hidden;
+      padding:72px 20px 60px;
+      text-align:center;
+      background:linear-gradient(180deg, #ffeef6 0%, var(--pink) 100%);
+      border-bottom:1px solid var(--beige);
+    }
+    .title{
+      font-weight:600;
+      letter-spacing:0.2px;
+      font-size:clamp(2rem,6vw,3.6rem);
+      margin:0 0 8px;
+    }
+    .subtitle{
+      opacity:.85;
+      margin:0;
+      font-size:clamp(.95rem,2.5vw,1.05rem);
+    }
+
+    /* floating confetti hearts */
+    .confetti{position:absolute;inset:0;pointer-events:none}
+    .heart{
+      position:absolute;width:10px;height:10px;background:var(--accent);
+      transform: rotate(45deg);border-radius:2px;opacity:.7
+    }
+    .heart::before,.heart::after{
+      content:"";position:absolute;width:10px;height:10px;border-radius:50%;background:var(--accent)
+    }
+    .heart::before{left:-6px}
+    .heart::after{top:-6px}
+    @keyframes floatDown{
+      from{transform:translateY(-120%) rotate(0)}
+      to{transform:translateY(120vh) rotate(360deg)}
+    }
+
+    main{max-width:1080px;margin:0 auto;padding:28px 16px 80px}
+
+    /* Card */
+    section.card{
+      background:var(--cream);
+      border:1px solid var(--beige);
+      border-radius:18px;
+      padding:18px 16px;
+      margin:18px 0;
+      box-shadow:0 6px 14px rgba(0,0,0,.04)
+    }
+    section.card h2{font-size:1.2rem;margin:6px 4px 12px;font-weight:600}
+
+    /* Affirmation ticker (one-direction, infinite, smooth) */
+    .ticker-wrap{
+      position:relative;overflow:hidden;border:1px dashed var(--beige);
+      background:var(--white);border-radius:16px;margin:4px auto 6px;padding:10px
+    }
+    .ticker{
+      display:flex;gap:28px;white-space:nowrap;font-style:italic;opacity:.95
+    }
+    .ticker-track{
+      display:flex;gap:28px;will-change:transform;animation:tickerMove 50s linear infinite
+    }
+    .ticker span{padding-right:28px}
+    @keyframes tickerMove{
+      from{transform:translateX(0)}
+      to{transform:translateX(-50%)} /* duplicate items make this seamless */
+    }
+
+    /* Playlist */
+    .playlist-embed{border-radius:14px;width:100%;height:380px;border:0;background:#0000}
+
+    /* Gallery */
+    .gallery{position:relative;overflow:hidden;border-radius:16px;background:var(--white);border:1px solid var(--beige)}
+    .slides{display:flex;transition:transform .6s ease}
+    .slide{min-width:100%;height:260px;background:#fff center/cover no-repeat}
+    .gallery-nav{display:flex;justify-content:space-between;gap:8px;margin-top:10px}
+    .btn{
+      appearance:none;border:1px solid var(--beige);background:var(--white);
+      border-radius:999px;padding:10px 14px;cursor:pointer;font-weight:600
+    }
+    .btn:hover{background:var(--beige)}
+
+    /* Open When */
+    .envelopes{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+    .envelope{
+      background:linear-gradient(180deg,#fff,#fffefb);
+      border:1px solid var(--beige);border-radius:16px;padding:16px;cursor:pointer;position:relative
+    }
+    .envelope::before{content:"✉️";position:absolute;right:12px;top:10px;opacity:.85}
+    .envelope h3{margin:0 0 6px;font-size:1.05rem}
+    .letter{display:none;margin-top:8px;padding:12px;border:1px dashed var(--beige);border-radius:12px;background:#fff}
+
+    /* Inside jokes */
+    .jokes{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+    .joke{background:#fff;border:1px solid var(--beige);border-radius:14px;padding:12px;font-size:.95rem}
+
+    /* Count-UP */
+    .countup{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+    .tile{background:#fff;border:1px solid var(--beige);border-radius:16px;padding:10px 14px;min-width:78px}
+    .tile .num{font-size:1.4rem;font-weight:700;display:block}
+    .tile .lbl{font-size:.8rem;opacity:.8}
+
+    /* Secret modal */
+    .secret-trigger{display:block;margin:16px auto 0;width:28px;height:28px;opacity:.25;cursor:pointer}
+    .secret-trigger:hover{opacity:.45}
+    .modal{position:fixed;inset:0;background:rgba(0,0,0,.35);display:none;align-items:center;justify-content:center;padding:16px}
+    .modal-card{background:var(--cream);border:1px solid var(--beige);border-radius:18px;max-width:520px;width:100%;padding:20px;text-align:center}
+    .close{margin-top:10px}
+
+    footer{margin:36px 0 0;text-align:center;opacity:.7;font-size:.9rem}
+  </style>
+</head>
+<body>
+  <header>
+    <h1 class="title">𝐖𝐄𝐋𝐂𝐎𝐌𝐄 𝐓𝐎 𝐂𝐎𝐋𝐋𝐄𝐆𝐄, 
+ <span id="herName">
+𝐒𝐈𝐃𝐑𝐀!
+</span>🎓</h1>
+    <p class="subtitle">i wish you well in all phases of your life</p>
+    <div class="confetti" id="confetti"></div>
+  </header>
+
+  <main>
+    <!-- 1) Affirmations -->
+    <section class="card" aria-label="affirmations">
+      <div class="ticker-wrap">
+        <div class="ticker">
+          <div class="ticker-track" id="tickerTrack">
+            <span>you’re doing amazing </span>
+            <span>i’m always a text away </span>
+            <span> (its still highschool lmao) </span>
+            <span>you’re stronger than you think </span>
+            <span>college is lucky to have you </span>
+            <!-- duplicate for seamless loop -->
+            <span>you’re so smart </span>
+            <span>my genius</span>
+            <span>you'll ace all your classes </span>
+            <span>you’re the best</span>
+            <span>i love you</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2) Playlist Embed -->
+    <section class="card" aria-label="playlist">
+      <h2>our playlist — miles apart, always in my heart 
+</h2>
+      <!-- 2) Playlist Embed --> <section class="card" aria-label="playlist"> <iframe class="playlist-embed" src="https://open.spotify.com/embed/playlist/23dWLtrCNti140LSTkxdZ6" <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/23dWLtrCNti140LSTkxdZ6?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></section>
+
+    <!-- 3) Photo Gallery / Memories -->
+    <section class="card" aria-label="memories">
+      <h2> reminders of us
+ </h2>
+      <div class="gallery" id="gallery">
+        <div class="slides" id="slides"><!-- slides injected by JS --></div>
+      </div>
+      <div class="gallery-nav">
+        <button class="btn" id="prev">⟵ prev</button>
+        <button class="btn" id="next">next ⟶</button>
+      </div>
+    </section>
+
+    <!-- 4) “Open When” Letters -->
+    <section class="card" aria-label="open when">
+      <h2>open when...💌
+ </h2>
+      <div class="envelopes">
+        <div class="envelope" data-letter="miss">
+          <h3>you miss me </h3>
+          <div class="letter" id="letter-miss">hi sidra, i’m just a text away. same moon, same sky. breathe deep, im all yours. </div>
+        </div>
+        <div class="envelope" data-letter="hard">
+          <h3>college feels hard  </h3>
+          <div class="letter" id="letter-hard">take it one tiny step at a time. you’ve already survived 100% of your worst days. you’re stronger than this moment.</div>
+        </div>
+        <div class="envelope" data-letter="laugh">
+          <h3>you need a laugh </h3>
+          <div class="letter" id="letter-laugh">remember when we gaslighted ourselves into believing that we could stay no-contact, but went spiralling 2 minutes later.</div>
+        </div>
+        <div class="envelope" data-letter="win">
+          <h3>you achieved something</h3>
+          <div class="letter" id="letter-win">i’m so proud of you! brag to me immediately. </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5) Inside Jokes / Quotes -->
+    <section class="card" aria-label="inside jokes">
+      <h2>our timeline</h2>
+      <div class="jokes" id="jokes">
+        <div class="joke">260718 </div>
+        <div class="joke">new year ritual : 00:00 a.m. </div>
+        <div class="joke"> niche references  —  707 (nana lol) & d^=b[,7’ (sarawatine) </div>
+        <div class="joke"> compulsorily going no-contact before birthdays</div>
+      </div>
+    </section>
+
+    <!-- 6) Count-UP (since 24 Sept 2020) -->
+    <section class="card" aria-label="countup">
+      <h2> 𝓈id & 𝒾nci — ever since
+</h2>
+      <div class="countup" id="countup"></div>
+    </section>
+
+    <!-- 7) Secret Surprise -->
+    <section class="card" aria-label="secret">
+      <h2>psst, theres a little secret 
+</h2>
+      <svg class="secret-trigger" id="secret" viewBox="0 0 24 24" fill="none" aria-label="open secret">
+        <path d="M12 21s-6-4.35-9-7.35C1.5 12.15 1 10.5 1 9a6 6 0 0 1 11-3 6 6 0 0 1 11 3c0 1.5-.5 3.15-2 4.65C18 16.65 12 21 12 21Z" stroke="currentColor" stroke-width="1.5"/>
+      </svg>
+    </section>
+  </main>
+
+  <footer>made with love • 𝓈idra ♡</footer>
+
+  <!-- Secret modal -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc">
+    <div class="modal-card">
+      <h2 id="modalTitle" style="margin:0 0 8px">surprise!</h2>
+      <p id="modalDesc">no matter the distance, i’m cheering for you, always. send me a selfie after your first week. my moon. im so far gone in love with you, theres no saving me. all the best with everything, my love, my doll, my star. </p>
+      <button class="btn close" id="closeModal">close</button>
+    </div>
+  </div>
+
+  <script>
+    /* -------- floating confetti hearts -------- */
+    (function(){
+      const c = document.getElementById('confetti');
+      const COUNT = 40;
+      for(let i=0;i<COUNT;i++){
+        const h = document.createElement('div');
+        h.className='heart';
+        const left = Math.random()*100;
+        const dur = 6 + Math.random()*6; // 6–12s
+        const delay = Math.random()*-12; // negative so they are already spread
+        h.style.left = left+'%';
+        h.style.top = '-20px';
+        h.style.animation = `floatDown ${dur}s linear infinite`;
+        h.style.animationDelay = `${delay}s`;
+        h.style.opacity = 0.5 + Math.random()*0.5;
+        c.appendChild(h);
+      }
+    })();
+
+    /* -------- gallery -------- */
+    const images = [
+      /* EDIT ME: replace with your own image URLs */
+      'https://i.postimg.cc/N0CkLMWW/download.jpg',
+      'https://i.postimg.cc/sxYWPDNf/image.jpg',
+      'https://i.postimg.cc/21pwFGhb/IMG-8784.jpg',
+      'https://i.postimg.cc/kXKh2QMK/download-3.jpg'
+    ];
+    const slides = document.getElementById('slides');
+    if(images.length){
+      images.forEach(url=>{
+        const d = document.createElement('div');
+        d.className='slide';
+        d.style.backgroundImage = `url("${url}")`;
+        slides.appendChild(d);
+      });
+    } else {
+      slides.innerHTML = '<div class="slide" style="display:flex;align-items:center;justify-content:center;color:#888">add photos to images[]</div>';
+    }
+    let idx = 0;
+    const prevBtn = document.getElementById('prev');
+    const nextBtn = document.getElementById('next');
+    const galleryEl = document.getElementById('gallery');
+    function go(i){
+      idx = (i+images.length)%images.length;
+      slides.style.transform = `translateX(-${idx*100}%)`;
+    }
+    prevBtn.addEventListener('click',()=>go(idx-1));
+    nextBtn.addEventListener('click',()=>go(idx+1));
+    let auto = setInterval(()=>go(idx+1), 4000);
+    galleryEl.addEventListener('mouseenter',()=>clearInterval(auto));
+    galleryEl.addEventListener('mouseleave',()=>auto = setInterval(()=>go(idx+1), 4000));
+
+    /* -------- open-when envelopes -------- */
+    document.querySelectorAll('.envelope').forEach(card=>{
+      card.addEventListener('click',()=>{
+        const id = card.dataset.letter;
+        const box = document.getElementById(`letter-${id}`);
+        const isOpen = box.style.display==='block';
+        document.querySelectorAll('.letter').forEach(l=>l.style.display='none');
+        box.style.display = isOpen ? 'none' : 'block';
+      });
+    });
+
+    /* -------- count-UP from 24 Sept 2020 -------- */
+    const countup = document.getElementById('countup');
+    function renderCountup(){
+      const start = new Date('2025-07-06T00:00:00'); // EDIT ME if needed
+      const now = new Date();
+      let ms = now - start;
+      const clamp = n => Math.max(0,n);
+
+      const days = clamp(Math.floor(ms/86400000));
+      ms %= 86400000;
+      const hours = clamp(Math.floor(ms/3600000));
+      ms %= 3600000;
+      const mins = clamp(Math.floor(ms/60000));
+      ms %= 60000;
+      const secs = clamp(Math.floor(ms/1000));
+
+      countup.innerHTML = `
+        <div class="tile"><span class="num">${days}</span><span class="lbl">days</span></div>
+        <div class="tile"><span class="num">${hours}</span><span class="lbl">hours</span></div>
+        <div class="tile"><span class="num">${mins}</span><span class="lbl">mins</span></div>
+        <div class="tile"><span class="num">${secs}</span><span class="lbl">secs</span></div>
+      `;
+    }
+    renderCountup();
+    setInterval(renderCountup, 1000);
+
+    /* ------- secret modal ------- */
+    const modal = document.getElementById('modal');
+    document.getElementById('secret').addEventListener('click',()=>{modal.style.display='flex'});
+    document.getElementById('closeModal').addEventListener('click',()=>{modal.style.display='none'});
+    modal.addEventListener('click', (e)=>{ if(e.target===modal) modal.style.display='none';});
+
+    /* -------- quick personalization helpers -------- */
+    // EDIT ME: set her name dynamically if you want:
+    // document.getElementById('herName').textContent = 'Aisha';
+  </script>
+</body>
+</html>
